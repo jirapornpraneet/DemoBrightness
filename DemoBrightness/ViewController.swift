@@ -42,17 +42,17 @@ class ViewController: UIViewController {
         UIScreen.setMainBrightness(brightness: usersBrightness)
     }
     
-    @objc private func applicationWillResignActive() {
-        UIScreen.setMainBrightness(brightness: usersBrightness)
+    @objc private func applicationWillResignActive(_ notification: NSNotification) {
+        UIScreen.setMainBrightness(brightness: 1)
     }
 
-    @objc private func applicationWillEnterForeground() {
+    @objc private func applicationWillEnterForeground(_ notification: NSNotification) {
         willEnterForegroundWasCalled = true
         usersBrightness = UIScreen.main.brightness
         UIScreen.setMainBrightness(brightness:1)
     }
 
-    @objc private func applicationDidBecomeActive() {
+    @objc private func applicationDidBecomeActive(_ notification: NSNotification) {
         usersBrightness = UIScreen.main.brightness
         UIScreen.setMainBrightness(brightness:1)
     }
