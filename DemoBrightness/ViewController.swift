@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         viewWillDisappearWasCalled = true
-        UIScreen.setMainBrightness(brightness: usersBrightness)
+        UIScreen.animateBrightness(to: usersBrightness)
     }
     
     @objc private func applicationWillResignActive(_ notification: NSNotification) {
