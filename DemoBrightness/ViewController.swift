@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         usersBrightness = UIScreen.main.brightness
-        UIScreen.setMainBrightness(brightness:1.0)
+        UIScreen.animateBrightness(to: 1.0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,18 +43,18 @@ class ViewController: UIViewController {
     }
     
     @objc private func applicationWillResignActive(_ notification: NSNotification) {
-        UIScreen.setMainBrightness(brightness:1.0)
+        UIScreen.animateBrightness(to: 1.0)
     }
 
     @objc private func applicationWillEnterForeground(_ notification: NSNotification) {
         willEnterForegroundWasCalled = true
         usersBrightness = UIScreen.main.brightness
-        UIScreen.setMainBrightness(brightness:1.0)
+        UIScreen.animateBrightness(to: 1.0)
     }
 
     @objc private func applicationDidBecomeActive(_ notification: NSNotification) {
         usersBrightness = UIScreen.main.brightness
-        UIScreen.setMainBrightness(brightness:1.0)
+        UIScreen.animateBrightness(to: 1.0)
     }
 
 }
